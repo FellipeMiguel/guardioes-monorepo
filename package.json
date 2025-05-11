@@ -1,0 +1,31 @@
+{
+  "name": "guardioes",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:mobile": "npm --workspace apps/mobile run start",
+    "dev:api": "npm --workspace packages/api run start:dev",
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:mobile\" \"npm run dev:api\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FellipeMiguel/guardioes-monorepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FellipeMiguel/guardioes-monorepo/issues"
+  },
+  "homepage": "https://github.com/FellipeMiguel/guardioes-monorepo#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
